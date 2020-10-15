@@ -1,8 +1,16 @@
-class Cell
-{
-    number = undefined;
+function Cell(ligne, colonne) {
+    this.ligne = ligne;
+    this.colonne = colonne;
+}
 
-    getNumber() {
-        return this.number;
-    }
+Player.prototype.getligne = function() {
+    return this.ligne;
+}
+
+Player.prototype.getcolonne = function() {
+    return this.colonne;
+}
+
+Player.prototype.setcolonne = function(colonne) {
+    this.colonne = colonne;
 }

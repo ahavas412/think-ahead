@@ -1,8 +1,16 @@
-function Player(nom, score) {
+function Player(nom, point) {
     this.nom = nom;
-    this.score = score;
+    this.point = point;
 }
 
-Joueur.prototype.afficherNom = function() {
+Player.prototype.getNom = function() {
     return this.nom;
+}
+
+Player.prototype.getPoint = function() {
+    return this.point;
+}
+
+Player.prototype.setPoint = function(point) {
+    this.point = point;
 }
