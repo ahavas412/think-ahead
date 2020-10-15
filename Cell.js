@@ -3,14 +3,18 @@ function Cell(ligne, colonne) {
     this.colonne = colonne;
 }
 
-Player.prototype.getligne = function() {
+Cell.prototype.getLigne = function() {
     return this.ligne;
 }
 
-Player.prototype.getcolonne = function() {
+Cell.prototype.setLigne = function(ligne) {
+    this.ligne = ligne;
+}
+
+Cell.prototype.getColonne = function() {
     return this.colonne;
 }
 
-Player.prototype.setcolonne = function(colonne) {
+Cell.prototype.setcolonne = function(colonne) {
     this.colonne = colonne;
 }
