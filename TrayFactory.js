@@ -8,3 +8,10 @@ class TrayFactory
         return Math.random() * (max - min) + min;
     }
 }
+
+
+try {
+    module.exports = Player;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
+}

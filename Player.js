@@ -14,3 +14,10 @@ Player.prototype.getPoint = function() {
 Player.prototype.setPoint = function(point) {
     this.point = point;
 }
+
+
+try {
+    module.exports = Player;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
+}

@@ -18,3 +18,10 @@ Cell.prototype.getColonne = function() {
 Cell.prototype.setcolonne = function(colonne) {
     this.colonne = colonne;
 }
+
+
+try {
+    module.exports = Player;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
+}

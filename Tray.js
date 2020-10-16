@@ -12,3 +12,10 @@ Tray.prototype.getPlayer1 = function() {
 Tray.prototype.setSize = function(size) {
     this.size = size;
 }
+
+
+try {
+    module.exports = Player;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
+}
