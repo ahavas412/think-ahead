@@ -1,6 +1,6 @@
-function Player(nom, score) {
+function Player(nom) {
     this.nom = nom;
-    this.score = score;
+    this.score = 0;
 }
 
 Player.prototype.getNom = function() {
