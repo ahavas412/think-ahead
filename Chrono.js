@@ -26,3 +26,9 @@ Chrono.prototype.getChronoStart = function() {
 Chrono.prototype.getReset = function() {
 
 }
+
+try {
+    module.exports = Chrono;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
+}

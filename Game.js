@@ -1,7 +1,3 @@
-import 'Player';
-import 'Chrono';
-import 'Tray';
-
 function Game(countTurn, currentPlayer, mode, chrono) {
     this.countTurn = countTurn;
     this.currentPlayer = currentPlayer;
@@ -35,4 +31,10 @@ Game.prototype.setMode = function(mode) {
 
 Game.prototype.getChrono = function() {
     return this.chrono;
+}
+
+try {
+    module.exports = Game;
+} catch {
+    // Utile pour importer les classes à testé et ne pas crash en navigateur
 }
