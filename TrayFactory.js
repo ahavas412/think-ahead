@@ -1,10 +1,13 @@
-class TrayFactory
-{
-    generateTray() {
-        
-    }
+import 'Cell';
 
-    generateNumber(min = -10, max = 15) {
-        return Math.random() * (max - min) + min;
-    }
+function TrayFactory(tray) {
+    this.tray = tray;
+}
+
+TrayFactory.prototype.getTray = function() {
+    return this.tray;
+}
+
+TrayFactory.prototype.createTray = function() {
+
 }
