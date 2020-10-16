@@ -1,20 +1,14 @@
-function Tray(longueur, largeur) {
-    this.longueur = longueur;
-    this.largeur = largeur;
+import 'Player';
+
+function Tray(player1, player2, size) {
+    this.size = size;
+    this.player1 = player1;
 }
 
-Tray.prototype.getLongueur = function() {
-    return this.longueur;
+Tray.prototype.getPlayer1 = function() {
+    return this.PLayer1;
 }
 
-Tray.prototype.setLongueur = function(longueur) {
-    this.largeur = longueur;
-}
-
-Tray.prototype.getLargeur = function() {
-    return this.largeur;
-}
-
-Tray.prototype.setlargeur = function(largeur) {
-    this.largeur = largeur;
+Tray.prototype.setSize = function(size) {
+    this.size = size;
 }
