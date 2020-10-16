@@ -7,19 +7,11 @@ Cell.prototype.getValue = function() {
     return this.value;
 }
 
-Cell.prototype.getisEnabled = function() {
+Cell.prototype.getIsEnabled = function() {
     return this.isEnabled;
 }
 
-Cell.prototype.getColonne = function() {
-    return this.colonne;
-}
-
-Cell.prototype.setcolonne = function(colonne) {
-    this.colonne = colonne;
-}
-
-Cell.prototype.setisEnabled = function (isEnabled) {
+Cell.prototype.setIsEnabled = function(isEnabled) {
     this.isEnabled = isEnabled;
 }
 
