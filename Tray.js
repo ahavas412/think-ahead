@@ -1,11 +1,7 @@
-import 'Player';
-import 'Cell';
-
-function Tray(player1, player2, size, tabCell) {
+function Tray(player1, player2, size) {
     this.size = size;
     this.player1 = player1;
     this.player2 = player2;
-    this.tabCell = tabCell;
 }
 
 Tray.prototype.getPlayer1 = function() {
@@ -22,10 +18,6 @@ Tray.prototype.getSize = function() {
 
 Tray.prototype.setSize = function(size) {
     this.size = size;
-}
-
-Tray.prototype.getTabCell = function () {
-    return this.tabCell;
 }
 
 

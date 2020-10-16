@@ -1,14 +1,3 @@
-class TrayFactory
-{
-    generateTray() {
-        
-    }
-
-    generateNumber(min = -10, max = 15) {
-        return Math.random() * (max - min) + min;
-    }
-}
-
 function TrayFactory(tray) {
     this.tray = tray;
 }
@@ -17,8 +6,21 @@ TrayFactory.prototype.getTray = function() {
     return this.tray;
 }
 
+TrayFactory.prototype.generateRandomNumber = function(min = -10, max = 15) {
+    return Math.random() * (max - min) + min;
+}
+
 TrayFactory.prototype.createTray = function() {
-    return null;
+
+    var tabCell = [];
+
+    for (var i = 0; i < this.tray.getSize() - 1; i++) {
+        for (var j = 0; j < this.tray.getSize() - 1; j++) {
+            tabCell[i][j] = new Cell(this.generateRandomNumber(), true);
+        }
+    }
+
+    return tabCell;
 }
 
 try {
