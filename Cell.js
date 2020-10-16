@@ -1,14 +1,14 @@
-function Cell(ligne, colonne) {
-    this.ligne = ligne;
-    this.colonne = colonne;
+function Cell(value, isEnabled) {
+    this.value = value;
+    this.isEnabled = isEnabled;
 }
 
-Cell.prototype.getLigne = function() {
-    return this.ligne;
+Cell.prototype.getValue = function() {
+    return this.value;
 }
 
-Cell.prototype.setLigne = function(ligne) {
-    this.ligne = ligne;
+Cell.prototype.getisEnabled = function() {
+    return this.isEnabled;
 }
 
 Cell.prototype.getColonne = function() {
@@ -17,6 +17,10 @@ Cell.prototype.getColonne = function() {
 
 Cell.prototype.setcolonne = function(colonne) {
     this.colonne = colonne;
+}
+
+Cell.prototype.setisEnabled = function (isEnabled) {
+    this.isEnabled = isEnabled;
 }
 
 
