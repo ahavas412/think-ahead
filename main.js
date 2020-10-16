@@ -4,4 +4,16 @@ var player1 = new Player("Jessy", 0);
 var player2 = new Player("Augustin", 0);
 var tray = new Tray(player1, player2, 4);
 var trayFactory = new TrayFactory(tray);
-console.log(trayFactory.createTray());
+var tabCell = trayFactory.createTray();
+console.log(tabCell);
+
+for (let i = 0; i < tray.getSize() * tray.getSize(); i) {
+    const ligne = document.createElement('tr');
+    for (let j = 0; j < tray.getSize(); j++) {
+        const colonne = document.createElement('td');
+        colonne.innerHTML = tabCell[i][0].getValue();
+        ligne.appendChild(colonne);
+        i++;
+    }
+    document.getElementById('tray').appendChild(ligne);
+}

@@ -15,7 +15,6 @@ Cell.prototype.setIsEnabled = function(isEnabled) {
     this.isEnabled = isEnabled;
 }
 
-
 try {
     module.exports = Cell;
 } catch {

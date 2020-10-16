@@ -7,17 +7,15 @@ TrayFactory.prototype.getTray = function() {
 }
 
 TrayFactory.prototype.generateRandomNumber = function(min = -10, max = 15) {
-    return Math.random() * (max - min) + min;
+    return Math.round(Math.random() * (max - min) + min);
 }
 
 TrayFactory.prototype.createTray = function() {
 
-    var tabCell = new Array(this.tray.getSize());
+    var tabCell = [];
 
-    for (var i = 0; i < this.tray.getSize() - 1; i++) {
-        for (var j = 0; j < this.tray.getSize() - 1; j++) {
-            tabCell.push([new Cell(this.generateRandomNumber(), true)]);
-        }
+    for (var i = 0; i < this.tray.getSize() * this.tray.getSize(); i++) {
+        tabCell.push([new Cell(this.generateRandomNumber(), true)]);
     }
 
     return tabCell;
