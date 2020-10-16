@@ -12,7 +12,7 @@ TrayFactory.prototype.generateRandomNumber = function(min = -10, max = 15) {
 
 TrayFactory.prototype.createTray = function() {
 
-    var tabCell = [];
+    var tabCell = new Array(this.tray.getSize());
 
     for (var i = 0; i < this.tray.getSize() - 1; i++) {
         for (var j = 0; j < this.tray.getSize() - 1; j++) {
