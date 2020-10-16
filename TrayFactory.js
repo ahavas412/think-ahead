@@ -9,9 +9,20 @@ class TrayFactory
     }
 }
 
+function TrayFactory(tray) {
+    this.tray = tray;
+}
+
+TrayFactory.prototype.getTray = function() {
+    return this.tray;
+}
+
+TrayFactory.prototype.createTray = function() {
+    return null;
+}
 
 try {
-    module.exports = Player;
+    module.exports = TrayFactory;
 } catch {
     // Utile pour importer les classes à testé et ne pas crash en navigateur
 }

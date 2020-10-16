@@ -21,7 +21,7 @@ Cell.prototype.setcolonne = function(colonne) {
 
 
 try {
-    module.exports = Player;
+    module.exports = Cell;
 } catch {
     // Utile pour importer les classes à testé et ne pas crash en navigateur
 }
