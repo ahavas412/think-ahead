@@ -16,7 +16,7 @@ TrayFactory.prototype.createTray = function() {
 
     for (var i = 0; i < this.tray.getSize() - 1; i++) {
         for (var j = 0; j < this.tray.getSize() - 1; j++) {
-            tabCell[i][j] = new Cell(this.generateRandomNumber(), true);
+            tabCell.push([new Cell(this.generateRandomNumber(), true)]);
         }
     }
 

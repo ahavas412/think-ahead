@@ -6,9 +6,3 @@ function AbstractException(message) {
 AbstractException().prototype.message = function(message) {
     return message;
 }
-
-try {
-    module.exports = AbstractException;
-} catch {
-    // Utile pour importer les classes à testé et ne pas crash en navigateur
-}
