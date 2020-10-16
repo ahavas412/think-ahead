@@ -11,7 +11,7 @@ for (let i = 0; i < tray.getSize() * tray.getSize(); i) {
     const ligne = document.createElement('tr');
     for (let j = 0; j < tray.getSize(); j++) {
         const colonne = document.createElement('td');
-        colonne.innerHTML = tabCell[i][0].getValue();
+        colonne.innerHTML = '<button value="' + i + '">' + tabCell[i][0].getValue() + '</button>';
         ligne.appendChild(colonne);
         i++;
     }
