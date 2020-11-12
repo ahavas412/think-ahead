@@ -90,6 +90,14 @@ describe('Game Class', function() {
         g2.changePlayer(cp2);
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
     });
+
+    it('Function ChangeScore', function() {
+        let cp = new Player('test');
+        let chg = new Chrono(2, 8);
+        let g2 = new Game(1, cp, "verticale", chg);
+        g2.changeScore(2);
+        assert.strictEqual(g2.getCurrentPlayer().getScore(), 2);
+    });
 });
 
 /* =================================== TEST CLASS TRAY ========================================= */
