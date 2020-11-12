@@ -18,6 +18,8 @@ const Game = require('../Game');
 const Tray = require('../Tray');
 const TrayFactory = require('../TrayFactory');
 
+/* =================================== TEST CLASS PLAYER ========================================= */
+
 describe('Player Class', function() {
     it('Player Constructor', function() {
         let p = new Player('nom');
@@ -33,10 +35,10 @@ describe('Player Class', function() {
 describe('Cell Class', function() {
     it('Cell Constructor', function() {
         let c = new Cell(3, true);
-        assert.equal(c.getValue(), 3);
-        assert.equal(c.getIsEnabled(), true);
+        assert.strictEqual(c.getValue(), 3);
+        assert.strictEqual(c.getIsEnabled(), true);
         c.setIsEnabled(false);
-        assert.equal(c.getIsEnabled(), false);
+        assert.strictEqual(c.getIsEnabled(), false);
     });
 });
 
@@ -45,10 +47,10 @@ describe('Cell Class', function() {
 describe('Chrono Class', function() {
     it('Chrono Constructor', function() {
         let ch = new Chrono(4, 15);
-        assert.equal(ch.getTime(), 4);
-        assert.equal(ch.getSubScore(), 15);
+        assert.strictEqual(ch.getTime(), 4);
+        assert.strictEqual(ch.getSubScore(), 15);
         ch.setSubScore(3);
-        assert.equal(ch.getSubScore(), 3);
+        assert.strictEqual(ch.getSubScore(), 3);
     });
 });
 
@@ -60,16 +62,16 @@ describe('Game Class', function() {
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8);
         let g = new Game(1, cp, "verticale", chg);
-        assert.equal(g.getCountTurn(), 1);
-        assert.equal(g.getCurrentPlayer(), cp);
-        assert.equal(g.getMode(), "verticale");
-        assert.equal(g.getChrono(), chg);
+        assert.strictEqual(g.getCountTurn(), 1);
+        assert.strictEqual(g.getCurrentPlayer(), cp);
+        assert.strictEqual(g.getMode(), "verticale");
+        assert.strictEqual(g.getChrono(), chg);
         g.setCountTurn(2);
         g.setCurrentPlayer(cp2);
         g.setMode("horizontale");
-        assert.equal(g.getCountTurn(), 2);
-        assert.equal(g.getCurrentPlayer(), cp2);
-        assert.equal(g.getMode(), "horizontale");
+        assert.strictEqual(g.getCountTurn(), 2);
+        assert.strictEqual(g.getCurrentPlayer(), cp2);
+        assert.strictEqual(g.getMode(), "horizontale");
     });
 });
 
@@ -80,11 +82,11 @@ describe('Tray Class', function() {
         let p = new Player('test');
         let p2 = new Player('test2');
         let t = new Tray(p, p2, 5);
-        assert.equal(t.getPlayer1(), p);
-        assert.equal(t.getPlayer2(), p2);
-        assert.equal(t.getSize(), 5);
+        assert.strictEqual(t.getPlayer1(), p);
+        assert.strictEqual(t.getPlayer2(), p2);
+        assert.strictEqual(t.getSize(), 5);
         t.setSize(6);
-        assert.equal(t.getSize(), 6);
+        assert.strictEqual(t.getSize(), 6);
     });
 });
 
@@ -96,6 +98,6 @@ describe('TrayFactory Class', function() {
         let pt2 = new Player('test2');
         let tf1 = new Tray(pt, pt2, 1)
         let tf = new TrayFactory(tf1);
-        assert.equal(tf.getTray(), tf1);
+        assert.strictEqual(tf.getTray(), tf1);
     });
 });
