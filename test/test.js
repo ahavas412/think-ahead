@@ -84,7 +84,7 @@ describe('Tray Class', function() {
         assert.equal(t.getPlayer2(), p2);
         assert.equal(t.getSize(), 5);
         t.setSize(6);
-        assert.equal(p.getSize(), 6);
+        assert.equal(t.getSize(), 6);
     });
 });
 
@@ -95,7 +95,7 @@ describe('TrayFactory Class', function() {
         let pt = new Player('test');
         let pt2 = new Player('test2');
         let tf1 = new Tray(pt, pt2, 1)
-        let tf = new TrayFactory();
+        let tf = new TrayFactory(tf1);
         assert.equal(tf.getTray(), tf1);
     });
 });
