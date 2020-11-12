@@ -41,7 +41,5 @@ $(function () {
             $('button.start').css('display', 'block');
             $('div.loader').css('display', 'none');
         }, 500);
-
-
     });
 })

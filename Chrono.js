@@ -29,23 +29,29 @@ Chrono.prototype.getElapsedTime = function(player) {
 }
 
 Chrono.prototype.ChronoStart = function() {
-    this.setCurrentTime(this.getTime());
-    this.ChronoDecrement(this.getTime());
+    chrono.setCurrentTime(this.getTime());
+    chrono.ChronoDecrement(this, false);
 }
 
-Chrono.prototype.ChronoDecrement = function(time, chrono) {
-    if (time > 0) {
-        time--;
-        chrono.setCurrentTime(time);
-        setTimeout(this.ChronoDecrement(time), 1000);
-    } else {
-        this.Reset();
+Chrono.prototype.ChronoDecrement = function(chrono, stop) {
+        let timeT = chrono.getCurrentTime();
+        if (timeT > 0 && stop == false) {
+            timeT--;
+            chrono.setCurrentTime(timeT);
+            // Savoir si le joueur courant a joué
+
+            console.log(timeT);
+            setTimeout(this.ChronoDecrement(chrono, false), 1000);
+        }
+        /*else {
+               this.Reset();
+               // Sinon SubScore si currentTime = 0
+           }*/
     }
-}
-
-Chrono.prototype.Reset = function() {
-    setTimeout(this.ChronoStart(), 1000);
-}
+    // A voir si utile
+    /*Chrono.prototype.Reset = function() {
+        setTimeout(this.ChronoStart(), 1000);
+    }*/
 
 try {
     module.exports = Chrono;
