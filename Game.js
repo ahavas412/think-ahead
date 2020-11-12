@@ -65,6 +65,10 @@ Game.prototype.changePlayer = function(mainPlayer) {
     this.setCurrentPlayer(mainPlayer);
 }
 
+Game.prototype.victoire = function() {
+
+}
+
 Game.prototype.changeTour = function(mainPlayer) {
     if (mainPlayer != this.getCurrentPlayer()) {
         if (this.getMode() == "verticale") {
