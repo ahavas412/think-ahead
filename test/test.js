@@ -46,7 +46,7 @@ describe('Cell Class', function() {
 
 describe('Chrono Class', function() {
     it('Chrono Constructor', function() {
-        let ch = new Chrono(4, 15);
+        let ch = new Chrono(4, 15, 3);
         assert.strictEqual(ch.getTime(), 4);
         assert.strictEqual(ch.getSubScore(), 15);
         ch.setSubScore(3);
