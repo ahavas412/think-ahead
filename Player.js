@@ -2,7 +2,6 @@ function Player(name) {
     this.name = '';
     this.setName(name);
     this.score = 0;
-
 }
 
 Player.prototype.getName = function() {
@@ -18,7 +17,7 @@ Player.prototype.getScore = function() {
     return this.score;
 }
 
-Player.prototype.setScore = function (score) {
+Player.prototype.setScore = function(score) {
     this.score = score;
 }
 
