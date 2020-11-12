@@ -66,7 +66,11 @@ Game.prototype.changePlayer = function(mainPlayer) {
 }
 
 Game.prototype.victoire = function(tray) {
-    tray.
+    tray.getTrayAfterFactory();
+}
+
+Game.prototype.modifierCase = function(caseAModifier) {
+
 }
 
 Game.prototype.changeTour = function(mainPlayer) {
