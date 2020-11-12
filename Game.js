@@ -7,6 +7,9 @@ function Game(countTurn, currentPlayer, mode, chrono, player1, player2) {
     this.player2 = player2;
 }
 
+const VERTICAL = 'vertical';
+const HORIZONTAL = 'horizontal'
+
 Game.prototype.getCountTurn = function() {
     return this.countTurn;
 }
@@ -28,7 +31,11 @@ Game.prototype.getMode = function() {
 }
 
 Game.prototype.setMode = function(mode) {
-    this.mode = mode;
+    if (this.availableModes().indexOf(mode)) {
+        this.mode = mode;
+    } else {
+        throw new Error('Invalid Mode')
+    }
 }
 
 Game.prototype.getChrono = function() {
@@ -41,6 +48,13 @@ Game.prototype.getPlayer1 = function() {
 
 Game.prototype.getPlayer2 = function() {
     return this.player2;
+}
+
+Game.prototype.availableModes = function() {
+    return [
+        VERTICAL,
+        HORIZONTAL,
+    ];
 }
 
 Game.prototype.changeScore = function(value) {
