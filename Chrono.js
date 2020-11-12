@@ -40,7 +40,7 @@ Chrono.prototype.ChronoDecrement = function(chrono, stop) {
             chrono.setCurrentTime(timeT);
             // Savoir si le joueur courant a joué
 
-            //console.log(timeT);
+            console.log(timeT);
             setTimeout(this.ChronoDecrement(chrono, false), 1000);
         }
         /*else {
