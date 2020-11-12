@@ -22,7 +22,7 @@ Game.prototype.setCurrentPlayer = function(currentPlayer) {
 }
 
 Game.prototype.getMode = function() {
-    return this.Mode;
+    return this.mode;
 }
 
 Game.prototype.setMode = function(mode) {

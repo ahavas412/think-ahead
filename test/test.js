@@ -83,7 +83,7 @@ describe('Tray Class', function() {
         assert.equal(t.getPlayer1(), p);
         assert.equal(t.getPlayer2(), p2);
         assert.equal(t.getSize(), 5);
-        p.setSize(6);
+        t.setSize(6);
         assert.equal(p.getSize(), 6);
     });
 });
