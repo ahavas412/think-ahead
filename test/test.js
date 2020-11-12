@@ -1,4 +1,4 @@
-var assert = require("assert");
+const assert = require("assert");
 
 
 // Exemple :
@@ -18,9 +18,9 @@ const Tray = require('../Tray');
 describe('Player Class', function () {
     it('Player Constructor', function () {
         let p = new Player('nom');
-        assert.equal(p.getNom(), 'nom');
-        assert.equal(p.getScore(), 0);
+        assert.strictEqual(p.getNom(), 'nom');
+        assert.strictEqual(p.getScore(), 0);
         p.setScore(5);
-        assert.equal(p.getScore(), 5);
+        assert.strictEqual(p.getScore(), 5);
     });
 });
