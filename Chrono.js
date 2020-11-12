@@ -1,7 +1,7 @@
-function Chrono(time, subScore, currentTime) {
+function Chrono(time, subScore) {
     this.time = time;
     this.subScore = subScore;
-    this.currentTime = currentTime;
+    this.currentTime = 0;
 }
 
 Chrono.prototype.getTime = function() {
@@ -29,12 +29,14 @@ Chrono.prototype.getElapsedTime = function(player) {
 }
 
 Chrono.prototype.ChronoStart = function() {
-    this.ChronoDecrement(this.time);
+    this.setCurrentTime(this.getTime());
+    this.ChronoDecrement(this.getTime());
 }
 
-Chrono.prototype.ChronoDecrement = function(time) {
+Chrono.prototype.ChronoDecrement = function(time, chrono) {
     if (time > 0) {
         time--;
+        chrono.setCurrentTime(time);
         setTimeout(this.ChronoDecrement(time), 1000);
     } else {
         this.Reset();
@@ -42,7 +44,7 @@ Chrono.prototype.ChronoDecrement = function(time) {
 }
 
 Chrono.prototype.Reset = function() {
-
+    setTimeout(this.ChronoStart(), 1000);
 }
 
 try {
