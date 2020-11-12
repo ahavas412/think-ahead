@@ -46,10 +46,12 @@ describe('Cell Class', function() {
 
 describe('Chrono Class', function() {
     it('Chrono Constructor', function() {
-        let ch = new Chrono(4, 15);
+        let player = new Player('test');
+        let ch = new Chrono(4, 15, player);
         assert.strictEqual(ch.getTime(), 4);
         assert.strictEqual(ch.getSubScore(), 15);
         assert.strictEqual(ch.getCurrentTime(), 0);
+        assert.strictEqual(ch.getPlayerChrono(), player);
         ch.setSubScore(3);
         ch.setCurrentTime(5);
         assert.strictEqual(ch.getSubScore(), 3);
@@ -57,8 +59,9 @@ describe('Chrono Class', function() {
     });
 
     it('Function ChronoStart', function() {
+        let player = new Player('test');
         let ch2 = new Chrono(4, 15);
-        ch2.ChronoStart();
+        ch2.ChronoStart(player);
     });
 });
 
@@ -68,7 +71,7 @@ describe('Game Class', function() {
     it('Game Constructor', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
-        let chg = new Chrono(2, 8);
+        let chg = new Chrono(2, 8, cp);
         let g = new Game(1, cp, "verticale", chg, cp, cp2);
         assert.strictEqual(g.getCountTurn(), 1);
         assert.strictEqual(g.getCurrentPlayer(), cp);
@@ -87,7 +90,7 @@ describe('Game Class', function() {
     it('Function ChangePlayer', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
-        let chg = new Chrono(2, 8);
+        let chg = new Chrono(2, 8, cp);
         let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changePlayer(cp2);
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
@@ -96,7 +99,7 @@ describe('Game Class', function() {
     it('Function ChangeScore', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
-        let chg = new Chrono(2, 8);
+        let chg = new Chrono(2, 8, cp);
         let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changeScore(2);
         assert.strictEqual(g2.getCurrentPlayer().getScore(), 2);
@@ -105,7 +108,7 @@ describe('Game Class', function() {
     it('Function ChangeTour', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
-        let chg = new Chrono(2, 8);
+        let chg = new Chrono(2, 8, cp);
         let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changeTour(cp2);
         assert.strictEqual(g2.getMode(), "horizontale");

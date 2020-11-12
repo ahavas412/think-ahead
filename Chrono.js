@@ -1,7 +1,8 @@
-function Chrono(time, subScore) {
+function Chrono(time, subScore, player) {
     this.time = time;
     this.subScore = subScore;
     this.currentTime = 0;
+    this.player = player;
 }
 
 Chrono.prototype.getTime = function() {
@@ -24,16 +25,21 @@ Chrono.prototype.setCurrentTime = function(currentTime) {
     this.currentTime = currentTime;
 }
 
+Chrono.prototype.getPlayerChrono = function() {
+    return this.player;
+}
+
 Chrono.prototype.getElapsedTime = function(player) {
-
+    // A vérifier selon les règles pour la diminution du score
+    player.setScore(player.getScore() - 6);
 }
 
-Chrono.prototype.ChronoStart = function() {
+Chrono.prototype.ChronoStart = function(player) {
     this.setCurrentTime(this.getTime());
-    this.ChronoDecrement(this, false);
+    this.ChronoDecrement(this, false, player);
 }
 
-Chrono.prototype.ChronoDecrement = function(chrono, stop) {
+Chrono.prototype.ChronoDecrement = function(chrono, stop, player) {
         let timeT = chrono.getCurrentTime();
         if (timeT > 0 && stop == false) {
             timeT--;
@@ -41,12 +47,10 @@ Chrono.prototype.ChronoDecrement = function(chrono, stop) {
             // Savoir si le joueur courant a joué
 
             //console.log(timeT);
-            setTimeout(function() { chrono.ChronoDecrement(chrono, false) }, 1000);
+            setTimeout(function() { chrono.ChronoDecrement(chrono, false, player) }, 1000);
+        } else {
+            chrono.getElapsedTime(player);
         }
-        /*else {
-               this.Reset();
-               // Sinon SubScore si currentTime = 0
-           }*/
     }
     // A voir si utile
     /*Chrono.prototype.Reset = function() {
