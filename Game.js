@@ -1,11 +1,10 @@
-function Game(countTurn, currentPlayer, mode, chrono, player1, player2, tray) {
+function Game(countTurn, currentPlayer, mode, chrono, player1, player2) {
     this.countTurn = countTurn;
     this.currentPlayer = currentPlayer;
     this.mode = mode;
     this.chrono = chrono;
     this.player1 = player1;
     this.player2 = player2;
-    this.tray = tray;
 }
 
 const VERTICAL = 'vertical';
@@ -49,10 +48,6 @@ Game.prototype.getPlayer1 = function() {
 
 Game.prototype.getPlayer2 = function() {
     return this.player2;
-}
-
-Game.prototype.getTray = function() {
-    return this.tray;
 }
 
 Game.prototype.availableModes = function() {
