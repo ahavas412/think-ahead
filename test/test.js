@@ -55,6 +55,11 @@ describe('Chrono Class', function() {
         assert.strictEqual(ch.getSubScore(), 3);
         assert.strictEqual(ch.getCurrentTime(), 5);
     });
+
+    it('Function ChronoStart', function() {
+        let ch2 = new Chrono(4, 15);
+        ch2.ChronoStart(ch2);
+    });
 });
 
 /* =================================== TEST CLASS GAME ========================================= */

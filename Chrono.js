@@ -28,24 +28,27 @@ Chrono.prototype.getElapsedTime = function(player) {
 
 }
 
-Chrono.prototype.ChronoStart = function() {
-    this.setCurrentTime(this.getTime());
-    this.ChronoDecrement(this.getTime());
+Chrono.prototype.ChronoStart = function(chrono) {
+    chrono.setCurrentTime(chrono.getTime());
+    chrono.ChronoDecrement(chrono.getTime(), chrono);
 }
 
-Chrono.prototype.ChronoDecrement = function(time, chrono) {
-    if (time > 0) {
-        time--;
-        chrono.setCurrentTime(time);
-        setTimeout(this.ChronoDecrement(time), 1000);
-    } else {
-        this.Reset();
+Chrono.prototype.ChronoDecrement = function(chrono) {
+    let timeT = chrono.getTime();
+    if (chrono.getTime() > 0) {
+        timeT--;
+        chrono.setCurrentTime(timeT);
+        console.log(this.getCurrentTime());
+        setTimeout(this.ChronoDecrement(timeT), 1000);
     }
+    /*else {
+           this.Reset();
+       }*/
 }
 
-Chrono.prototype.Reset = function() {
+/*Chrono.prototype.Reset = function() {
     setTimeout(this.ChronoStart(), 1000);
-}
+}*/
 
 try {
     module.exports = Chrono;
