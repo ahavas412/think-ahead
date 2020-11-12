@@ -58,7 +58,7 @@ describe('Chrono Class', function() {
 
     it('Function ChronoStart', function() {
         let ch2 = new Chrono(4, 15);
-        ch2.ChronoStart(ch2);
+        console.log(ch2.ChronoStart(ch2));
     });
 });
 

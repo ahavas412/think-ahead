@@ -1,4 +1,7 @@
 //let player = new Player('bob', 10);
+
+//const Chrono = require("./Chrono");
+
 //console.log(player.getNom());
 var player1 = new Player("Jessy", 0);
 var player2 = new Player("Augustin", 0);
@@ -17,3 +20,7 @@ for (let i = 0; i < tray.getSize() * tray.getSize(); i) {
     }
     document.getElementById('tray').appendChild(ligne);
 }
+
+var chrono = new Chrono(10, 0);
+
+console.log(chrono.ChronoStart());

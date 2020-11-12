@@ -28,27 +28,30 @@ Chrono.prototype.getElapsedTime = function(player) {
 
 }
 
-Chrono.prototype.ChronoStart = function(chrono) {
-    chrono.setCurrentTime(chrono.getTime());
-    chrono.ChronoDecrement(chrono.getTime(), chrono);
+Chrono.prototype.ChronoStart = function() {
+    chrono.setCurrentTime(this.getTime());
+    chrono.ChronoDecrement(this, false);
 }
 
-Chrono.prototype.ChronoDecrement = function(chrono) {
-    let timeT = chrono.getTime();
-    if (chrono.getTime() > 0) {
-        timeT--;
-        chrono.setCurrentTime(timeT);
-        console.log(this.getCurrentTime());
-        setTimeout(this.ChronoDecrement(timeT), 1000);
+Chrono.prototype.ChronoDecrement = function(chrono, stop) {
+        let timeT = chrono.getCurrentTime();
+        if (timeT > 0 && stop == false) {
+            timeT--;
+            chrono.setCurrentTime(timeT);
+            // Savoir si le joueur courant a joué
+
+            console.log(timeT);
+            setTimeout(this.ChronoDecrement(chrono, false), 1000);
+        }
+        /*else {
+               this.Reset();
+               // Sinon SubScore si currentTime = 0
+           }*/
     }
-    /*else {
-           this.Reset();
-       }*/
-}
-
-/*Chrono.prototype.Reset = function() {
-    setTimeout(this.ChronoStart(), 1000);
-}*/
+    // A voir si utile
+    /*Chrono.prototype.Reset = function() {
+        setTimeout(this.ChronoStart(), 1000);
+    }*/
 
 try {
     module.exports = Chrono;
