@@ -69,12 +69,12 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8);
-        let g = new Game(1, cp, "verticale", chg);
+        let g = new Game(1, cp, "verticale", chg, cp, cp2);
         assert.strictEqual(g.getCountTurn(), 1);
         assert.strictEqual(g.getCurrentPlayer(), cp);
         assert.strictEqual(g.getMode(), "verticale");
         assert.strictEqual(g.getChrono(), chg);
-        assert.strictEqual(g.getPlayer(), cp);
+        assert.strictEqual(g.getPlayer1(), cp);
         assert.strictEqual(g.getPlayer2(), cp2);
         g.setCountTurn(2);
         g.setCurrentPlayer(cp2);
@@ -95,6 +95,7 @@ describe('Game Class', function() {
 
     it('Function ChangeScore', function() {
         let cp = new Player('test');
+        let cp2 = new Player('test2');
         let chg = new Chrono(2, 8);
         let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changeScore(2);
