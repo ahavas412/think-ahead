@@ -1,10 +1,17 @@
-function Player(nom) {
-    this.nom = nom;
+function Player(name) {
+    this.name = '';
+    this.setName(name);
     this.score = 0;
+
 }
 
-Player.prototype.getNom = function() {
-    return this.nom;
+Player.prototype.getName = function() {
+    return this.name;
+}
+
+Player.prototype.setName = function(name) {
+    // Check valid Name
+    this.name = name;
 }
 
 Player.prototype.getScore = function() {

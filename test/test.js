@@ -23,7 +23,7 @@ const TrayFactory = require('../TrayFactory');
 describe('Player Class', function() {
     it('Player Constructor', function() {
         let p = new Player('nom');
-        assert.strictEqual(p.getNom(), 'nom');
+        assert.strictEqual(p.getName(), 'nom');
         assert.strictEqual(p.getScore(), 0);
         p.setScore(5);
         assert.strictEqual(p.getScore(), 5);
