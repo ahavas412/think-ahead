@@ -66,7 +66,7 @@ Game.prototype.changePlayer = function(mainPlayer) {
 }
 
 Game.prototype.victoire = function(tray) {
-    this.getTray()
+    tray.
 }
 
 Game.prototype.changeTour = function(mainPlayer) {

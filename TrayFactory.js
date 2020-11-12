@@ -1,18 +1,9 @@
 function TrayFactory(tray) {
     this.tray = tray;
-    this.trayAfterFactory = 0;
 }
 
 TrayFactory.prototype.getTray = function() {
     return this.tray;
-}
-
-TrayFactory.prototype.getTrayAfterFactory = function() {
-    return this.tray;
-}
-
-TrayFactory.prototype.setTrayAfterFactory = function(trayAfterFactory) {
-    this.tray = trayAfterFactory;
 }
 
 TrayFactory.prototype.generateRandomNumber = function(min = -10, max = 15) {
@@ -27,7 +18,7 @@ TrayFactory.prototype.createTray = function() {
         tabCell.push([new Cell(this.generateRandomNumber(), true)]);
     }
 
-
+    this.setTrayAfterFactory(tabCell);
 
     return tabCell;
 }
