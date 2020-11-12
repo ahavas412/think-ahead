@@ -20,7 +20,6 @@ Tray.prototype.setSize = function(size) {
     this.size = size;
 }
 
-
 try {
     module.exports = Tray;
 } catch {

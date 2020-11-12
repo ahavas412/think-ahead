@@ -1,17 +1,17 @@
-function Player(nom) {
-    this.nom = nom;
+function Player(name) {
+    this.name = name;
     this.score = 0;
 }
 
-Player.prototype.getNom = function() {
-    return this.nom;
+Player.prototype.getName = function() {
+    return this.name;
 }
 
 Player.prototype.getScore = function() {
     return this.score;
 }
 
-Player.prototype.setScore = function (score) {
+Player.prototype.setScore = function(score) {
     this.score = score;
 }
 
