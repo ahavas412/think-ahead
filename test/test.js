@@ -74,6 +74,8 @@ describe('Game Class', function() {
         assert.strictEqual(g.getCurrentPlayer(), cp);
         assert.strictEqual(g.getMode(), "verticale");
         assert.strictEqual(g.getChrono(), chg);
+        assert.strictEqual(g.getPlayer(), cp);
+        assert.strictEqual(g.getPlayer2(), cp2);
         g.setCountTurn(2);
         g.setCurrentPlayer(cp2);
         g.setMode("horizontale");
@@ -86,7 +88,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8);
-        let g2 = new Game(1, cp, "verticale", chg);
+        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changePlayer(cp2);
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
     });
@@ -94,7 +96,7 @@ describe('Game Class', function() {
     it('Function ChangeScore', function() {
         let cp = new Player('test');
         let chg = new Chrono(2, 8);
-        let g2 = new Game(1, cp, "verticale", chg);
+        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changeScore(2);
         assert.strictEqual(g2.getCurrentPlayer().getScore(), 2);
     });
@@ -103,7 +105,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8);
-        let g2 = new Game(1, cp, "verticale", chg);
+        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
         g2.changeTour(cp2);
         assert.strictEqual(g2.getMode(), "horizontale");
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
@@ -115,11 +117,7 @@ describe('Game Class', function() {
 
 describe('Tray Class', function() {
     it('Tray Constructor', function() {
-        let p = new Player('test');
-        let p2 = new Player('test2');
-        let t = new Tray(p, p2, 5);
-        assert.strictEqual(t.getPlayer1(), p);
-        assert.strictEqual(t.getPlayer2(), p2);
+        let t = new Tray(5);
         assert.strictEqual(t.getSize(), 5);
         t.setSize(6);
         assert.strictEqual(t.getSize(), 6);
@@ -130,9 +128,7 @@ describe('Tray Class', function() {
 
 describe('TrayFactory Class', function() {
     it('TrayFactory Constructor', function() {
-        let pt = new Player('test');
-        let pt2 = new Player('test2');
-        let tf1 = new Tray(pt, pt2, 1)
+        let tf1 = new Tray(1)
         let tf = new TrayFactory(tf1);
         assert.strictEqual(tf.getTray(), tf1);
     });

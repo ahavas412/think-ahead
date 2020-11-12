@@ -1,5 +1,5 @@
-$(function () {
-    $('button.start').click(function () {
+$(function() {
+    $('button.start').click(function() {
         // Récupère les 2 Names
         if ($('input:text.p1').attr('disabled')) {
             return null;
@@ -17,14 +17,14 @@ $(function () {
 
         var player1 = new Player(p1Name, 0);
         var player2 = new Player(p2Name, 0);
-        var tray = new Tray(player1, player2, 4);
+        var tray = new Tray(4);
         var trayFactory = new TrayFactory(tray);
         var tabCell = trayFactory.createTray();
 
         console.log(tabCell);
 
         // setTimeout pour avoir un effet de chargement
-        setTimeout(function () {
+        setTimeout(function() {
             // Génère le rendu du tableau
             for (let i = 0; i < tray.getSize() * tray.getSize(); i) {
                 const ligne = document.createElement('tr');

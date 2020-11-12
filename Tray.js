@@ -1,15 +1,5 @@
-function Tray(player1, player2, size) {
+function Tray(size) {
     this.size = size;
-    this.player1 = player1;
-    this.player2 = player2;
-}
-
-Tray.prototype.getPlayer1 = function() {
-    return this.player1;
-}
-
-Tray.prototype.getPlayer2 = function() {
-    return this.player2;
 }
 
 Tray.prototype.getSize = function() {
