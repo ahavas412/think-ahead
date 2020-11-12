@@ -41,8 +41,16 @@ Game.prototype.changePlayer = function(mainPlayer) {
     this.setCurrentPlayer(mainPlayer);
 }
 
-Game.prototype.changeTour = function() {
-
+Game.prototype.changeTour = function(mainPlayer) {
+    if (mainPlayer != this.getCurrentPlayer()) {
+        if (this.getMode() == "verticale") {
+            this.setMode("horizontale");
+        } else {
+            this.setMode("verticale");
+        }
+        this.changePlayer(mainPlayer);
+        this.setCountTurn(this.getCountTurn() + 1);
+    }
 }
 
 try {

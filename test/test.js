@@ -98,6 +98,17 @@ describe('Game Class', function() {
         g2.changeScore(2);
         assert.strictEqual(g2.getCurrentPlayer().getScore(), 2);
     });
+
+    it('Function ChangeTour', function() {
+        let cp = new Player('test');
+        let cp2 = new Player('test2');
+        let chg = new Chrono(2, 8);
+        let g2 = new Game(1, cp, "verticale", chg);
+        g2.changeTour(cp2);
+        assert.strictEqual(g2.getMode(), "horizontale");
+        assert.strictEqual(g2.getCurrentPlayer(), cp2);
+        assert.strictEqual(g2.getCountTurn(), 2);
+    });
 });
 
 /* =================================== TEST CLASS TRAY ========================================= */
