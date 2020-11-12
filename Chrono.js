@@ -29,8 +29,8 @@ Chrono.prototype.getElapsedTime = function(player) {
 }
 
 Chrono.prototype.ChronoStart = function() {
-    chrono.setCurrentTime(this.getTime());
-    chrono.ChronoDecrement(this, false);
+    this.setCurrentTime(this.getTime());
+    this.ChronoDecrement(this, false);
 }
 
 Chrono.prototype.ChronoDecrement = function(chrono, stop) {
@@ -40,7 +40,7 @@ Chrono.prototype.ChronoDecrement = function(chrono, stop) {
             chrono.setCurrentTime(timeT);
             // Savoir si le joueur courant a joué
 
-            console.log(timeT);
+            //console.log(timeT);
             setTimeout(this.ChronoDecrement(chrono, false), 1000);
         }
         /*else {

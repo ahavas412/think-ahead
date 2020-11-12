@@ -33,6 +33,18 @@ Game.prototype.getChrono = function() {
     return this.chrono;
 }
 
+Game.prototype.changeScore = function(value) {
+    this.getCurrentPlayer().setScore(this.getCurrentPlayer().getScore() + value);
+}
+
+Game.prototype.changePlayer = function(mainPlayer) {
+    this.setCurrentPlayer(mainPlayer);
+}
+
+Game.prototype.changeTour = function() {
+
+}
+
 try {
     module.exports = Game;
 } catch {

@@ -58,7 +58,7 @@ describe('Chrono Class', function() {
 
     it('Function ChronoStart', function() {
         let ch2 = new Chrono(4, 15);
-        console.log(ch2.ChronoStart(ch2));
+        ch2.ChronoStart();
     });
 });
 
@@ -80,6 +80,15 @@ describe('Game Class', function() {
         assert.strictEqual(g.getCountTurn(), 2);
         assert.strictEqual(g.getCurrentPlayer(), cp2);
         assert.strictEqual(g.getMode(), "horizontale");
+    });
+
+    it('Function ChangePlayer', function() {
+        let cp = new Player('test');
+        let cp2 = new Player('test2');
+        let chg = new Chrono(2, 8);
+        let g2 = new Game(1, cp, "verticale", chg);
+        g2.changePlayer(cp2);
+        assert.strictEqual(g2.getCurrentPlayer(), cp2);
     });
 });
 
