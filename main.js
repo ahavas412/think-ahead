@@ -1,7 +1,7 @@
 $(function() {
     $('button.start').click(function() {
         // Récupère les 2 Names
-        if ($('input:text.p1').attr('disabled')) {
+        if ($('input:text.p1').attr('disabled') && $('input:text.p2').attr('disabled')) {
             return null;
         }
 
@@ -42,4 +42,4 @@ $(function() {
             $('div.loader').css('display', 'none');
         }, 500);
     });
-})
+});
