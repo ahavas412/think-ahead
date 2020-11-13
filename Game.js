@@ -101,7 +101,7 @@ Game.prototype.changeTour = function() {
  */
 Game.prototype.checkValidMove = function(tabCell, numCell) {
     tabcell.forEach(cell => {
-        if (cell.num == numCell) {
+        if (cell.getNum() == numCell) {
             var currentCell = cell;
             cell.setIsEnabled(false);
         }
