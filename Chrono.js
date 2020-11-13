@@ -35,7 +35,7 @@ Chrono.prototype.setPlayerChrono = function(playerChrono) {
 
 Chrono.prototype.getElapsedTime = function(player) {
     // A vérifier selon les règles pour la diminution du score
-    player.setScore(player.getScore() - 6);
+    player.setScore(player.getScore() - this.getSubScore());
 }
 
 Chrono.prototype.ChronoStart = function(player) {

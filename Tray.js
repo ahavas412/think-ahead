@@ -1,6 +1,6 @@
 function Tray(size) {
     this.size = size;
-    this.trayAfterFactory = 0;
+    this.content = 0;
 }
 
 Tray.prototype.getSize = function() {
@@ -11,12 +11,12 @@ Tray.prototype.setSize = function(size) {
     this.size = size;
 }
 
-Tray.prototype.getTrayAfterFactory = function() {
-    return this.tray;
+Tray.prototype.getContent = function() {
+    return this.content;
 }
 
-Tray.prototype.setTrayAfterFactory = function(trayAfterFactory) {
-    this.tray = trayAfterFactory;
+Tray.prototype.setContent = function(content) {
+    this.content = content;
 }
 
 try {

@@ -18,7 +18,7 @@ TrayFactory.prototype.createTray = function(tray) {
         tabCell.push([new Cell(this.generateRandomNumber(), true, i)]);
     }
 
-    tray.setTrayAfterFactory(tabCell);
+    tray.setContent(tabCell);
 
     return tabCell;
 }

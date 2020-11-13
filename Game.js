@@ -70,9 +70,9 @@ Game.prototype.victoire = function(tray) {
 }
 
 Game.prototype.updateCell = function(numCellChange, tray) {
-    tray.forEach(element => {
-        if (element.getNum() == numCellChange) {
-            element.setIsEnabled(false);
+    tray.forEach(cell => {
+        if (cell.getNum() == numCellChange) {
+            cell.setIsEnabled(false);
         }
     });
 }
