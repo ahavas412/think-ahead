@@ -18,8 +18,8 @@ $(function() {
         var player1 = new Player(p1Name, 0);
         var player2 = new Player(p2Name, 0);
         var tray = new Tray(4);
-        var trayFactory = new TrayFactory(tray);
-        var tabCell = trayFactory.createTray();
+        var trayFactory = new TrayFactory();
+        var tabCell = trayFactory.createTray(tray);
 
         console.log(tabCell);
 

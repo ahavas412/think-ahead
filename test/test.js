@@ -137,7 +137,7 @@ describe('Tray Class', function() {
     it('Tray Constructor', function() {
         let t = new Tray(2);
         let tF = new TrayFactory();
-        //tF.createTray(t);
+        tF.createTray(t);
         assert.strictEqual(t.getSize(), 2);
         //assert.strictEqual(t.getTrayAfterFactory(), tF.createTray(t));
         t.setSize(6);
