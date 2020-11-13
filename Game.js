@@ -1,5 +1,5 @@
-function Game(countTurn, currentPlayer, mode, chrono, player1, player2) {
-    this.countTurn = countTurn;
+function Game(currentPlayer, mode, chrono, player1, player2) {
+    this.countTurn = 1;
     this.currentPlayer = currentPlayer;
     this.mode = mode;
     this.chrono = chrono;
@@ -34,8 +34,10 @@ Game.prototype.setMode = function(mode) {
     if (this.availableModes().indexOf(mode)) {
         this.mode = mode;
     } else {
-        throw new Error('Invalid Mode')
+        // throw new Error('Invalid Mode')
     }
+    this.mode = mode;
+
 }
 
 Game.prototype.getChrono = function() {
@@ -77,17 +79,27 @@ Game.prototype.updateCell = function(numCellChange, tray) {
     });
 }
 
-Game.prototype.changeTour = function(mainPlayer) {
-    if (mainPlayer != this.getCurrentPlayer()) {
-        if (this.getMode() == "verticale") {
-            this.setMode("horizontale");
-        } else {
-            this.setMode("verticale");
-        }
-        this.changePlayer(mainPlayer);
-        this.setCountTurn(this.getCountTurn() + 1);
-        this.getChrono().setPlayerChrono(mainPlayer);
+Game.prototype.changeTour = function() {
+    var mainPlayer = (this.getCurrentPlayer() === this.getPlayer1()) ? this.getPlayer2() : this.getPlayer1();
+    if (this.getMode() === VERTICAL) {
+        this.setMode(HORIZONTAL);
+    } else {
+        this.setMode(VERTICAL);
     }
+    this.changePlayer(mainPlayer);
+    this.setCountTurn(this.getCountTurn() + 1);
+    this.getChrono().setPlayerChrono(mainPlayer);
+}
+
+/**
+ * Vérifier si le move est bon en fonction de numCell et le mode
+ *
+ * @param numCell ID de la Cell qui vient d'etre cliqué
+ *
+ * @return boolean
+ */
+Game.prototype.checkValidMove = function(numCell) {
+
 }
 
 try {

@@ -73,7 +73,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g = new Game(1, cp, "verticale", chg, cp, cp2);
+        let g = new Game(cp, "verticale", chg, cp, cp2);
         assert.strictEqual(g.getCountTurn(), 1);
         assert.strictEqual(g.getCurrentPlayer(), cp);
         assert.strictEqual(g.getMode(), "verticale");
@@ -92,7 +92,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "verticale", chg, cp, cp2);
         g2.changePlayer(cp2);
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
     });
@@ -101,7 +101,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "verticale", chg, cp, cp2);
         g2.changeScore(2);
         assert.strictEqual(g2.getCurrentPlayer().getScore(), 2);
     });
@@ -110,7 +110,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "verticale", chg, cp, cp2);
         g2.changeTour(cp2);
         assert.strictEqual(g2.getMode(), "horizontale");
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
@@ -122,7 +122,7 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "verticale", chg, cp, cp2);
         let tray = new Tray(2);
         let trayFactory = new TrayFactory();
         trayFactory.createTray(tray);
