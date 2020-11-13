@@ -7,7 +7,13 @@ function Game(currentPlayer, mode, chrono, player1, player2) {
     this.player2 = player2;
 }
 
-const VERTICAL = 'vertical';
+Game.prototype.VERTICAL = function() {
+    return 'vertical';
+}
+Game.prototype.HORIZONTAL = function() {
+    return 'horizontal';
+}
+
 const HORIZONTAL = 'horizontal'
 
 Game.prototype.getCountTurn = function() {
@@ -34,7 +40,7 @@ Game.prototype.setMode = function(mode) {
     if (this.availableModes().indexOf(mode)) {
         this.mode = mode;
     } else {
-        // throw new Error('Invalid Mode')
+        throw new Error('Invalid Mode')
     }
     this.mode = mode;
 
@@ -54,8 +60,8 @@ Game.prototype.getPlayer2 = function() {
 
 Game.prototype.availableModes = function() {
     return [
-        VERTICAL,
-        HORIZONTAL,
+        this.VERTICAL(),
+        this.HORIZONTAL(),
     ];
 }
 
@@ -71,20 +77,20 @@ Game.prototype.victoire = function(tray) {
     tray.getTrayAfterFactory();
 }
 
-// Game.prototype.updateCell = function(numCellChange, tray) {
-//     tray.forEach(cell => {
-//         if (cell.getNum() == numCellChange) {
-//             cell.setIsEnabled(false);
-//         }
-//     });
-// }
+Game.prototype.updateCell = function(tabCell, numCell) {
+    tabCell.forEach(cell => {
+        if (cell.getNum() == numCell) {
+            cell.setIsEnabled(false);
+        }
+    });
+}
 
 Game.prototype.changeTour = function() {
     var mainPlayer = (this.getCurrentPlayer() === this.getPlayer1()) ? this.getPlayer2() : this.getPlayer1();
-    if (this.getMode() === VERTICAL) {
-        this.setMode(HORIZONTAL);
+    if (this.getMode() === this.VERTICAL()) {
+        this.setMode(this.HORIZONTAL());
     } else {
-        this.setMode(VERTICAL);
+        this.setMode(this.VERTICAL());
     }
     this.changePlayer(mainPlayer);
     this.setCountTurn(this.getCountTurn() + 1);
@@ -100,12 +106,21 @@ Game.prototype.changeTour = function() {
  * @return boolean
  */
 Game.prototype.checkValidMove = function(tabCell, numCell) {
+<<<<<<< HEAD
     tabcell.forEach(cell => {
+=======
+    tabCell.forEach(cell => {
+>>>>>>> e24558abb1d196b480e5994cec29f70f58cabedc
         if (cell.getNum() == numCell) {
             var currentCell = cell;
-            cell.setIsEnabled(false);
         }
     });
+
+    if (game.getMode() == Game.VERTICAL) {
+
+    } else {
+
+    }
 }
 
 try {
