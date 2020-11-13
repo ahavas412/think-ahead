@@ -94,12 +94,17 @@ Game.prototype.changeTour = function() {
 /**
  * Vérifier si le move est bon en fonction de numCell et le mode
  *
+ * @param tabCell Tableau d'objet Cell
  * @param numCell ID de la Cell qui vient d'etre cliqué
  *
  * @return boolean
  */
-Game.prototype.checkValidMove = function(numCell) {
-
+Game.prototype.checkValidMove = function(tabCell, numCell) {
+    tabcell.forEach(cell => {
+        if (cell.num == numCell) {
+            var currentCell = cell;
+        }
+    });
 }
 
 try {

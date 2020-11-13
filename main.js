@@ -59,11 +59,15 @@ $(function() {
     });
 
     $('table.table').on('click', 'button.cell', function () {
-        game.checkValidMove($(this).val());
-        game.changeTour();
-        $('h5.currentPlayerName').text(game.getCurrentPlayer().getName());
-        $('p.currentPlayerScore').text("Score : " + game.getCurrentPlayer().getScore());
-        $(this).css('color', 'red');
-        $(this).css('background-color', 'grey');
+        $('div.error').text('');
+        if (game.checkValidMove(tabCell, $(this).val())) {
+            game.changeTour();
+            $('h5.currentPlayerName').text(game.getCurrentPlayer().getName());
+            $('p.currentPlayerScore').text("Score : " + game.getCurrentPlayer().getScore());
+            $(this).css('color', 'red');
+            $(this).css('background-color', 'grey');
+        } else {
+            $('div.error').text('You can\'t do this move !');
+        }
     });
 });
