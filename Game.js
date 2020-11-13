@@ -71,13 +71,13 @@ Game.prototype.victoire = function(tray) {
     tray.getTrayAfterFactory();
 }
 
-Game.prototype.updateCell = function(numCellChange, tray) {
-    tray.forEach(cell => {
-        if (cell.getNum() == numCellChange) {
-            cell.setIsEnabled(false);
-        }
-    });
-}
+// Game.prototype.updateCell = function(numCellChange, tray) {
+//     tray.forEach(cell => {
+//         if (cell.getNum() == numCellChange) {
+//             cell.setIsEnabled(false);
+//         }
+//     });
+// }
 
 Game.prototype.changeTour = function() {
     var mainPlayer = (this.getCurrentPlayer() === this.getPlayer1()) ? this.getPlayer2() : this.getPlayer1();
@@ -103,6 +103,7 @@ Game.prototype.checkValidMove = function(tabCell, numCell) {
     tabcell.forEach(cell => {
         if (cell.num == numCell) {
             var currentCell = cell;
+            cell.setIsEnabled(false);
         }
     });
 }
