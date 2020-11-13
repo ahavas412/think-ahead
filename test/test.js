@@ -110,9 +110,9 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "vertical", chg, cp, cp2);
         g2.changeTour(cp2);
-        assert.strictEqual(g2.getMode(), "horizontale");
+        assert.strictEqual(g2.getMode(), "horizontal");
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
         assert.strictEqual(g2.getCountTurn(), 2);
     });
@@ -122,12 +122,12 @@ describe('Game Class', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
-        let g2 = new Game(cp, "verticale", chg, cp, cp2);
+        let g2 = new Game(cp, "vertical", chg, cp, cp2);
         let tray = new Tray(2);
         let trayFactory = new TrayFactory();
         trayFactory.createTray(tray);
         g2.updateCell(3, tray);
-        assert.strictEqual(g2.getMode(), "horizontale");
+        assert.strictEqual(g2.getMode(), "horizontal");
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
         assert.strictEqual(g2.getCountTurn(), 2);
         assert.strictEqual(tray.getContent()[3].getIsEnabled(), false);
