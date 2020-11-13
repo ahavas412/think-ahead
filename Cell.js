@@ -1,10 +1,15 @@
-function Cell(value, isEnabled) {
+function Cell(value, isEnabled, num) {
     this.value = value;
     this.isEnabled = isEnabled;
+    this.num = num;
 }
 
 Cell.prototype.getValue = function() {
     return this.value;
+}
+
+Cell.prototype.getNum = function() {
+    return this.num;
 }
 
 Cell.prototype.getIsEnabled = function() {

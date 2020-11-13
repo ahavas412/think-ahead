@@ -11,11 +11,11 @@ Tray.prototype.setSize = function(size) {
     this.size = size;
 }
 
-TrayFactory.prototype.getTrayAfterFactory = function() {
+Tray.prototype.getTrayAfterFactory = function() {
     return this.tray;
 }
 
-TrayFactory.prototype.setTrayAfterFactory = function(trayAfterFactory) {
+Tray.prototype.setTrayAfterFactory = function(trayAfterFactory) {
     this.tray = trayAfterFactory;
 }
 

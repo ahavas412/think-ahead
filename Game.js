@@ -69,8 +69,12 @@ Game.prototype.victoire = function(tray) {
     tray.getTrayAfterFactory();
 }
 
-Game.prototype.modifierCase = function(caseAModifier) {
-
+Game.prototype.updateCell = function(numCellChange, tray) {
+    tray.forEach(element => {
+        if (element.getNum() == numCellChange) {
+            element.setIsEnabled(false);
+        }
+    });
 }
 
 Game.prototype.changeTour = function(mainPlayer) {

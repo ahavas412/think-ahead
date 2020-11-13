@@ -34,9 +34,10 @@ describe('Player Class', function() {
 
 describe('Cell Class', function() {
     it('Cell Constructor', function() {
-        let c = new Cell(3, true);
+        let c = new Cell(3, true, 0);
         assert.strictEqual(c.getValue(), 3);
         assert.strictEqual(c.getIsEnabled(), true);
+        assert.strictEqual(c.getNum(), 0);
         c.setIsEnabled(false);
         assert.strictEqual(c.getIsEnabled(), false);
     });
@@ -115,14 +116,30 @@ describe('Game Class', function() {
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
         assert.strictEqual(g2.getCountTurn(), 2);
     });
+
+    /*it('Function updateCell', function() {
+        let cp = new Player('test');
+        let cp2 = new Player('test2');
+        let chg = new Chrono(2, 8, cp);
+        let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
+        let tray = new Tray(4);
+        let TrayFactory = new TrayFactory(tray);
+        g2.updateCell();
+        assert.strictEqual(g2.getMode(), "horizontale");
+        assert.strictEqual(g2.getCurrentPlayer(), cp2);
+        assert.strictEqual(g2.getCountTurn(), 2);
+    });*/
 });
 
 /* =================================== TEST CLASS TRAY ========================================= */
 
 describe('Tray Class', function() {
     it('Tray Constructor', function() {
-        let t = new Tray(5);
-        assert.strictEqual(t.getSize(), 5);
+        let t = new Tray(2);
+        let tF = new TrayFactory();
+        //tF.createTray(t);
+        assert.strictEqual(t.getSize(), 2);
+        //assert.strictEqual(t.getTrayAfterFactory(), tF.createTray(t));
         t.setSize(6);
         assert.strictEqual(t.getSize(), 6);
     });
@@ -132,8 +149,6 @@ describe('Tray Class', function() {
 
 describe('TrayFactory Class', function() {
     it('TrayFactory Constructor', function() {
-        let tf1 = new Tray(1)
-        let tf = new TrayFactory(tf1);
-        assert.strictEqual(tf.getTray(), tf1);
+        let tf = new TrayFactory();
     });
 });

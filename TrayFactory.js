@@ -1,24 +1,24 @@
-function TrayFactory(tray) {
-    this.tray = tray;
+function TrayFactory() {
+    //this.tray = tray;
 }
 
-TrayFactory.prototype.getTray = function() {
+/*TrayFactory.prototype.getTray = function() {
     return this.tray;
-}
+}*/
 
 TrayFactory.prototype.generateRandomNumber = function(min = -10, max = 15) {
     return Math.round(Math.random() * (max - min) + min);
 }
 
-TrayFactory.prototype.createTray = function() {
+TrayFactory.prototype.createTray = function(tray) {
 
     var tabCell = [];
 
-    for (var i = 0; i < this.tray.getSize() * this.tray.getSize(); i++) {
-        tabCell.push([new Cell(this.generateRandomNumber(), true)]);
+    for (var i = 0; i < tray.getSize() * tray.getSize(); i++) {
+        tabCell.push([new Cell(this.generateRandomNumber(), true, i)]);
     }
 
-    this.setTrayAfterFactory(tabCell);
+    tray.setTrayAfterFactory(tabCell);
 
     return tabCell;
 }
