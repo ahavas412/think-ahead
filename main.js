@@ -15,8 +15,8 @@ $(function() {
         $(this).css('display', 'none');
         $('div.loader').css('display', 'block');
 
-        var player1 = new Player(p1Name, 0);
-        var player2 = new Player(p2Name, 0);
+        var player1 = new Player(p1Name);
+        var player2 = new Player(p2Name);
         var tray = new Tray(4);
         var trayFactory = new TrayFactory();
         var tabCell = trayFactory.createTray(tray);

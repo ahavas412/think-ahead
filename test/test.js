@@ -117,17 +117,20 @@ describe('Game Class', function() {
         assert.strictEqual(g2.getCountTurn(), 2);
     });
 
+    // Problème import Cell dans la classe TrayFactory (Méthode createTray)
     /*it('Function updateCell', function() {
         let cp = new Player('test');
         let cp2 = new Player('test2');
         let chg = new Chrono(2, 8, cp);
         let g2 = new Game(1, cp, "verticale", chg, cp, cp2);
-        let tray = new Tray(4);
-        let TrayFactory = new TrayFactory(tray);
-        g2.updateCell();
+        let tray = new Tray(2);
+        let trayFactory = new TrayFactory();
+        trayFactory.createTray(tray);
+        g2.updateCell(3, tray);
         assert.strictEqual(g2.getMode(), "horizontale");
         assert.strictEqual(g2.getCurrentPlayer(), cp2);
         assert.strictEqual(g2.getCountTurn(), 2);
+        assert.strictEqual(tray.getContent()[3].getIsEnabled(), false);
     });*/
 });
 
@@ -137,7 +140,7 @@ describe('Tray Class', function() {
     it('Tray Constructor', function() {
         let t = new Tray(2);
         let tF = new TrayFactory();
-        tF.createTray(t);
+        //tF.createTray(t);
         assert.strictEqual(t.getSize(), 2);
         //assert.strictEqual(t.getTrayAfterFactory(), tF.createTray(t));
         t.setSize(6);
